@@ -47,18 +47,18 @@
         "EVENT_LOGS": {
             "description": "Event logs channel to note down important bot level events, recommend to make this public. ex: '-123456'",
             "required": true,
-            "value": "-1002080453210"
+            "value": "-1002092954715"
         },
         "MONGO_DB_URI": {
             "description": "Required for database connections.",
             "required": true,
-            "value": ""
+            "value": "mongodb+srv://userbot:userbot@cluster0.iweqz.mongodb.net/test?retryWrites=true&w=majority"
         },
         
         "OWNER_ID": {
             "description": "Your user ID as an integer.",
             "required": true,
-            "value": ""
+            "value": "6259443940"
         },
         "START_IMG": {
             "description": "Telegraph link of the image which will be shown at start command.",
