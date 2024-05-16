@@ -5,7 +5,7 @@
     "keywords": [
        "ghost"
     ],   
- "repository": "",
+ "repository": "https://github.com/error-corpse/TELEGRAM-BOT",
  "stack": "heroku-22",
  "addons": [
     {
