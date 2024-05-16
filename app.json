@@ -5,20 +5,15 @@
     "keywords": [
        "ghost"
     ],
-    "repository": "",
-    "stack": "heroku-22",
-    "buildpacks": [
-        {
-            "url": "heroku/python"
-        }
-    ],
-    "addons": [
-        {
-            "options": {
-                "version": "15"
-            },
-            "plan": "heroku-postgresql"
-        }
+    "repository": "https://github.com/error-corpse/TELEGRAM-BOT",
+      "stack": "heroku-22",
+   "addons": [
+      {
+         "options": {
+            "version": "15"
+         },
+         "plan": "heroku-postgresql"
+      }
     ],
     "env": {
         "API_ID": {
