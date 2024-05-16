@@ -2,14 +2,14 @@ import logging
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackQueryHandler
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 import threading
-from config import TOKEN, BOT_OWNER_ID
+import os
 
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Dictionary to store admin user IDs
-admin_ids = {BOT_OWNER_ID}
+admin_ids = {int(os.environ.get('OWNER_ID'))}
 
 # Dictionary to store the current auction details
 current_auction = {}
@@ -18,7 +18,7 @@ def start(update: Update, context: CallbackContext):
     update.message.reply_text("Welcome to the Auction Bot! Tag an item to start bidding.")
 
 def promote_admin(update: Update, context: CallbackContext):
-    if update.effective_user.id == BOT_OWNER_ID:
+    if update.effective_user.id in admin_ids:
         try:
             new_admin_id = int(context.args[0])
             admin_ids.add(new_admin_id)
@@ -85,7 +85,7 @@ def welcome_message(update: Update, context: CallbackContext):
         context.bot.send_message(chat_id=update.effective_chat.id, text=welcome_text)
 
 def main():
-    updater = Updater(TOKEN, use_context=True)
+    updater = Updater(os.environ.get('TOKEN'), use_context=True)
     dispatcher = updater.dispatcher
 
     # Register commands and handlers
