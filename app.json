@@ -6,61 +6,51 @@
        "ghost"
     ],   
  "repository": "",
- "stack": "heroku-22",
- "addons": [
-    {
-       "options": {
-          "version": "15"
-       },
-       "plan": "heroku-postgresql"
-    }
- ],
- "env": {
-    "API_ID": {
-       "description": "Get this value from my.telegram.org/apps.",
-       "required": true,
-       "value": ""
-    },
-    "API_HASH": {
-       "description": "Get this value from my.telegram.org/apps.",
-       "required": true,
-       "value": ""
-    },
-    "ENV": {
-       "description": "Setting this to ANYTHING will enable environment variables. Leave it as it is",
-       "required": true,
-       "value": "True"
-    },
-    "EVENT_LOGS": {
-       "description": "Event logs channel to note down important bot level events, recommend to make this public. ex: '-123456'",
-       "required": true,
-       "value": "-1002080453210"
-    },
-    "MONGO_DB_URI": {
-       "description": "Required for database connections.",
-       "required": true,
-       "value": ""
-    },
-        
-    "OWNER_ID": {
-       "description": "Your user ID as an integer.",
-       "required": true,
-       "value": ""
-    },
-    "START_IMG": {
-       "description": "Telegraph link of the image which will be shown at start command.",
-       "required": true,
-       "value": "https://graph.org/file/5c957ccf2829531848411.jpg"
-    },
-    "SUPPORT_CHAT": {
-       "description": "Your Telegram support group chat username where your users will go and bother you with shit Example - The_support_chat.",
-       "required": true,
-       "value": "paradoxdump"
-    },
-    "TOKEN": {
-       "description": "Get bot token from @BotFather on TG",
-       "required": true,
-       "value": ""
-    }
- }
+    "stack": "heroku-22",
+   "addons": [
+      {
+         "plan": "heroku-postgresql",
+         "options": {
+            "version": "15"
+         }
+      }
+   ],
+   "env": {
+      "API_ID": {
+         "description": "Obtain this value from my.telegram.org/apps.",
+         "required": true,
+         "value": ""
+      },
+      "API_HASH": {
+         "description": "Obtain this value from my.telegram.org/apps.",
+         "required": true,
+         "value": ""
+      },
+      "EVENT_LOGS": {
+         "description": "Channel for event logs to note down important bot-level events. Recommend making this public. Example: '-123456'",
+         "required": true,
+         "value": "-1002092954715"
+      },
+      "MESSAGE_DUMP": {
+         "description": "Support chat ID.",
+         "required": true,
+         "value": "-1002092954715"
+      },
+      "OWNER_ID": {
+         "description": "Your user ID as an integer.",
+         "required": true,
+         "value": "6259443940"
+      },
+      "SUPPORT_CHAT": {
+         "description": "Your Telegram support group chat username. Users will reach out for assistance. Example: MyGroupChatUsernameBlah. Avoid pointing to Miko Support to prevent conflicts.",
+         "required": true,
+         "value": "paradoxdump"
+      },
+ 
+      "TOKEN": {
+         "description": "Bot token obtained from @BotFather on Telegram.",
+         "required": true,
+         "value": ""
+      }
+   }
 }
