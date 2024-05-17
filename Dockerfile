@@ -1,5 +1,5 @@
-# Use Heroku's Python Buildpack
-FROM heroku/python
+# Use the official Python image from the Docker Hub
+FROM python:3.9-slim
 
 # Set environment variables
 ENV PYTHONUNBUFFERED=1 \
@@ -12,10 +12,8 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy bot code and configuration
-COPY AuctionBot/ ./AuctionBot/
-COPY Dockerfile .
-COPY app.json .
+# Copy the rest of the application
+COPY . .
 
 # Start the bot
 CMD ["python3", "-m", "AuctionBot.main"]
